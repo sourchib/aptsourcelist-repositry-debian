@@ -39,4 +39,8 @@ Get:6 http://ftp.debian.org stable/main Translation-en [6,078 kB]
 Get:7 http://ftp.debian.org stable/non-free Translation-en [67.2 kB]
 Fetched 15.3 MB in 10s (1,484 kB/s)
 Reading package lists... Done
+root@muchib:/home/muchib# cat /etc/apt/sources.list
+deb http://ftp.debian.org/debian stable main contrib non-free
+root@muchib:/home/muchib# sh clock
+sh: 0: Can't open clock
 root@muchib:/home/muchib#
