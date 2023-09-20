@@ -41,6 +41,3 @@ Fetched 15.3 MB in 10s (1,484 kB/s)
 Reading package lists... Done
 root@muchib:/home/muchib# cat /etc/apt/sources.list
 deb http://ftp.debian.org/debian stable main contrib non-free
-root@muchib:/home/muchib# sh clock
-sh: 0: Can't open clock
-root@muchib:/home/muchib#
