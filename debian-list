@@ -1,0 +1,46 @@
+# aptsourcelist-repositry-debian
+How to problem apt-get update using debian error The following signatures couldn't be verified because the public key is not available:
+
+root@muchib:/home/muchib# apt-get update
+Get:1 http://ftp.debian.org stable InRelease [151 kB]
+Ign http://ftp.debian.org stable InRelease
+Get:2 http://ftp.debian.org stable/main i386 Packages [8,796 kB]
+Get:3 http://ftp.debian.org stable/contrib i386 Packages [46.7 kB]
+Get:4 http://ftp.debian.org stable/non-free i386 Packages [74.4 kB]
+Get:5 http://ftp.debian.org stable/contrib Translation-en [48.7 kB]
+Get:6 http://ftp.debian.org stable/main Translation-en [6,078 kB]
+Get:7 http://ftp.debian.org stable/non-free Translation-en [67.2 kB]
+Ign http://ftp.debian.org stable/contrib Translation-en_US
+Ign http://ftp.debian.org stable/main Translation-en_US
+Ign http://ftp.debian.org stable/non-free Translation-en_US
+Fetched 15.3 MB in 16s (930 kB/s)
+Reading package lists... Done
+W: GPG error: http://ftp.debian.org stable InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 0E98404D386FA1D9 NO_PUBKEY 6ED0E7B82643E131
+root@muchib:/home/muchib# apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0E98404D386FA1D9
+Executing: gpg --ignore-time-conflict --no-options --no-default-keyring --homedir /tmp/tmp.ezVIzviagk --no-auto-check-trustdb --trust-model always --primary-keyring /etc/apt/trusted.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-jessie-automatic.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-jessie-security-automatic.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-jessie-stable.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-squeeze-automatic.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-squeeze-stable.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-wheezy-automatic.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-wheezy-stable.gpg --keyserver keyserver.ubuntu.com --recv-keys 0E98404D386FA1D9
+gpg: requesting key 386FA1D9 from hkp server keyserver.ubuntu.com
+gpg: key 8DD47936: public key "Debian Archive Automatic Signing Key (11/bullseye) <ftpmaster@debian.org>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1  (RSA: 1)
+root@muchib:/home/muchib# apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6ED0E7B82643E131
+Executing: gpg --ignore-time-conflict --no-options --no-default-keyring --homedir /tmp/tmp.8VrZIvhsyD --no-auto-check-trustdb --trust-model always --keyring /etc/apt/trusted.gpg --primary-keyring /etc/apt/trusted.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-jessie-automatic.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-jessie-security-automatic.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-jessie-stable.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-squeeze-automatic.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-squeeze-stable.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-wheezy-automatic.gpg --keyring /etc/apt/trusted.gpg.d/debian-archive-wheezy-stable.gpg --keyserver keyserver.ubuntu.com --recv-keys 6ED0E7B82643E131
+gpg: requesting key 2643E131 from hkp server keyserver.ubuntu.com
+gpg: key 350947F8: public key "Debian Archive Automatic Signing Key (12/bookworm) <ftpmaster@debian.org>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1  (RSA: 1)
+root@muchib:/home/muchib#
+root@muchib:/home/muchib# apt-get update
+Get:1 http://ftp.debian.org stable InRelease [151 kB]
+Get:2 http://ftp.debian.org stable/main i386 Packages [8,796 kB]
+Get:3 http://ftp.debian.org stable/contrib i386 Packages [46.7 kB]
+Get:4 http://ftp.debian.org stable/non-free i386 Packages [74.4 kB]
+Get:5 http://ftp.debian.org stable/contrib Translation-en [48.7 kB]
+Get:6 http://ftp.debian.org stable/main Translation-en [6,078 kB]
+Get:7 http://ftp.debian.org stable/non-free Translation-en [67.2 kB]
+Fetched 15.3 MB in 10s (1,484 kB/s)
+Reading package lists... Done
+root@muchib:/home/muchib# cat /etc/apt/sources.list
+deb http://ftp.debian.org/debian stable main contrib non-free
+root@muchib:/home/muchib# sh clock
+sh: 0: Can't open clock
+root@muchib:/home/muchib#
